@@ -14,7 +14,7 @@ class Category {
       : id = json['id'] as String,
         title = json['title'] as String,
         imageUrl = json['image'] as String,
-        numberOfProducts = json['numberOfProducts'] as int;
+        numberOfProducts = json['numOfProducts'] as int;
 
   @override
   String toString() {

@@ -18,7 +18,7 @@ class Product {
       : id = json['id'] as String,
         title = json['title'] as String,
         imageUrl = json['image'] as String,
-        subTitle = json['subtitle'] as String,
+        subTitle = json['subTitle'] as String,
         description = json['description'] as String,
         price = json['price'] as int;
 
