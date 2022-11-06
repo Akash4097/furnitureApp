@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:furniture_app/ui/widgets/category_list.dart';
+import '../widgets/category_list.dart';
 import '../../repository/repository_impl.dart';
+import '../widgets/product_list.dart';
 import '../widgets/search_bar.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,11 +16,17 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFF035AA6),
-      appBar: _buildAppBar(),
-      body: Column(
-        children: const [SearchBar(), CategoryList()],
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: const Color(0xFF035AA6),
+        appBar: _buildAppBar(),
+        body: Column(
+          children: const [
+            SearchBar(),
+            CategoryList(),
+            ProductList(),
+          ],
+        ),
       ),
     );
   }
@@ -32,7 +39,7 @@ class _HomePageState extends State<HomePage> {
       actions: [
         IconButton(
           onPressed: () {},
-          icon: Icon(Icons.notifications),
+          icon: const Icon(Icons.notifications),
         )
       ],
     );

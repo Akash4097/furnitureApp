@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:furniture_app/model/category.dart';
-import 'package:furniture_app/repository/repository_impl.dart';
 
 class CategoryList extends StatefulWidget {
   const CategoryList({super.key});
@@ -11,22 +9,7 @@ class CategoryList extends StatefulWidget {
 
 class _CategoryListState extends State<CategoryList> {
   int _selectedIndex = 0;
-  late final List<Category> categories;
-
-  @override
-  void initState() {
-    super.initState();
-    _fetchCategoryList();
-  }
-
-  void _fetchCategoryList() async {
-    final repository = FurnitureRepositoryImpl();
-    final result = await repository.getCategory();
-
-    setState(() {
-      categories = result;
-    });
-  }
+  List categories = ['All', 'Sofa', 'Park bench', 'Armchair'];
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +39,7 @@ class _CategoryListState extends State<CategoryList> {
               borderRadius: BorderRadius.circular(6),
             ),
             child: Text(
-              categories[index].title,
+              categories[index],
               style: const TextStyle(color: Colors.white),
             ),
           ),
