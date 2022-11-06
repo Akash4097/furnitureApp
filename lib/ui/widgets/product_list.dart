@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:furniture_app/model/product.dart';
 import 'package:furniture_app/repository/repository_impl.dart';
+import 'package:furniture_app/ui/pages/product_detail_page.dart';
 
 import 'product_card.dart';
 
@@ -39,14 +40,14 @@ class _ProductListState extends State<ProductList> {
                     index: index,
                     product: products[index],
                     onTap: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (context) => DetailsScreen(
-                      //       product: products[index],
-                      //     ),
-                      //   ),
-                      // );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ProductDetailPage(
+                            product: products[index],
+                          ),
+                        ),
+                      );
                     },
                   ),
                 );
