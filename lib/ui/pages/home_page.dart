@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:furniture_app/ui/widgets/category_list.dart';
 import '../../repository/repository_impl.dart';
 import '../widgets/search_bar.dart';
 
@@ -18,9 +19,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: const Color(0xFF035AA6),
       appBar: _buildAppBar(),
       body: Column(
-        children: const [
-          SearchBar(),
-        ],
+        children: const [SearchBar(), CategoryList()],
       ),
     );
   }
